@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 21:14:12 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/14 22:02:47 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/15 10:13:34 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int ft_atoi(const char *str)
 		i++;
 	}
 	j = i - 1;
-	while (++i && str[i] >= '0' && str[i] <= '9')
+	while (++i >= 0 && str[i] >= '0' && str[i] <= '9')
 		base *= 10;
-	while (++j && str[j] >= '0' && str[j] <= '9')
+	while (++j >= 0 && str[j] >= '0' && str[j] <= '9')
 	{
 		n += (str[j] - '0') * base;
 		base /= 10;
