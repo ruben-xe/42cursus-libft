@@ -6,13 +6,13 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 10:28:26 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/20 12:09:55 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/20 15:53:00 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*mem;
 	int				i;

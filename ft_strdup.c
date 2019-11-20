@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 12:36:58 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/19 17:09:36 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/20 14:38:42 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *s1)
 	if ((s2 = (char *)malloc(size * sizeof(char))))
 	{
 		i = -1;
-		while ((s2 || s1) && ++i < (int)size)
+		while (++i < (int)size)
 			s2[i] = s1[i];
 	}
 	return (s2);
