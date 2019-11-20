@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 10:20:10 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/15 17:19:03 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/19 16:21:58 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char			*mem;
-	unsigned int	i;
+	unsigned char	*mem;
+	int				i;
 
 	mem = s;
 	i = -1;
-	while (n > 0 && ++i >= 0 && i < n)
+	while (++i < (int)n)
 		mem[i] = 0;
 }

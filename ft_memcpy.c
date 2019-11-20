@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 11:59:35 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/15 17:36:32 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/19 16:23:04 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int		i;
-	char	*d;
-	char	*s;
+	unsigned char		*d;
+	const unsigned char	*s;
+	int					i;
 
-	d = (char *)dst;
-	s = (char *)src;
+	d = dst;
+	s = src;
 	i = -1;
-	while ((d || s) && n > 0 && ++i >= 0 && (unsigned int)i < n)
+	while ((d || s) && ++i < (int)n)
 		d[i] = s[i];
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 15:57:53 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/15 17:31:41 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/20 10:14:40 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	size;
+	int	len;
 
-	size = ft_strlen(s);
-	if (!c)
-		return ((char *)&s[size]);
+	len = ft_strlen(s);
+	if (!c && s[len] == c)
+		return ((char *)&s[len]);
 	else
-	{
-		while (--size >= 0)
-		{
-			if (s[size] == (char)c)
-				return ((char *)&s[size]);
-		}
-	}
+		while (--len >= 0)
+			if (s[len] == (char)c)
+				return ((char *)&s[len]);
 	return (NULL);
 }

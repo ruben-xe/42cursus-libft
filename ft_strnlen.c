@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsize.c                                       :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 13:41:03 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/19 17:10:58 by rsoto-in         ###   ########.fr       */
+/*   Created: 2019/11/19 17:05:46 by rsoto-in          #+#    #+#             */
+/*   Updated: 2019/11/19 17:11:43 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strsize(const char *s)
+size_t ft_strnlen(const char *s, size_t maxlen)
 {
 	size_t len;
 
 	len = 0;
-	while (s && s[len])
+	while (len < maxlen && s && s[len])
 		len++;
-	return (len + 1);
+	return (len);
 }

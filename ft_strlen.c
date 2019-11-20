@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:32:06 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/15 13:43:38 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/19 17:07:00 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	unsigned int len;
+	size_t len;
 
 	len = 0;
 	while (s[len])

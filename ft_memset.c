@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 12:20:44 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/15 17:27:19 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/19 16:23:35 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int		i;
-	char	*mem;
+	unsigned char	*mem;
+	int				i;
 
+	mem = b;
 	i = -1;
-	mem = (char *)b;
-	while (len > 0 && ++i >= 0 && (unsigned int)i < len)
+	while (++i < (int)len)
 		mem[i] = c;
 	return (b);
 }
