@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 13:24:17 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/19 17:28:15 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/21 15:10:34 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int				i;
-	unsigned int	srcsize;
+	int		i;
+	size_t	srcsize;
 
 	srcsize = 1;
 	if (dst)

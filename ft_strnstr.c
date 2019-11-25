@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 14:18:36 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/19 18:45:18 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/11/21 15:25:27 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned int i;
-	unsigned int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	while (!(j = 0) && i < len && haystack[i] && needle[j])
