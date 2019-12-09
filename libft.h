@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 19:57:00 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/19 17:09:19 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/12/09 13:01:24 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
 size_t				ft_strnlen(const char *s, size_t maxlen);
-size_t				ft_strsize(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
 								size_t len);

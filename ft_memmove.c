@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 12:05:35 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/21 15:06:47 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/12/09 12:38:38 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*d;
 	unsigned char	*s;
-	int				size;
-	int				i;
+	size_t			i;
 
 	if (!src && !dst)
 		return (NULL);
@@ -25,14 +24,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		d = (unsigned char *)dst;
 		s = (unsigned char *)src;
-		size = (int)len;
-		i = -1;
+		i = 0;
 		if (d < s)
-			while (++i < size)
+			while (i < len)
+			{
 				d[i] = s[i];
+				i++;
+			}
 		else
-			while (--size >= 0)
-				d[size] = s[size];
+			while (--len >= 0)
+				d[len] = s[len];
 	}
 	return (dst);
 }
