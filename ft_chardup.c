@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_chardup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 12:36:58 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/12/21 22:38:38 by rsoto-in         ###   ########.fr       */
+/*   Created: 2019/12/21 13:08:42 by rsoto-in          #+#    #+#             */
+/*   Updated: 2019/12/21 13:11:12 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_chardup(const char c)
 {
-	char	*s2;
-	size_t	len;
-	size_t	i;
+	char	*s;
 
-	s2 = NULL;
-	len = 0;
-	while (s1 && s1[len])
-		len++;
-	if ((s2 = (char *)ft_calloc((len + 1), sizeof(char))))
-	{
-		i = 0;
-		while (s1 && s1[i] && i < len + 1)
-		{
-			s2[i] = s1[i];
-			i++;
-		}
-	}
-	return (s2);
+	if ((s = (char *)ft_calloc(2, sizeof(char))))
+		*s = c;
+	return (s);
 }

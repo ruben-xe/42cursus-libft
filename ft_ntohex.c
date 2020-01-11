@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ntohex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 12:36:58 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/12/21 22:38:38 by rsoto-in         ###   ########.fr       */
+/*   Created: 2019/12/11 15:24:38 by rsoto-in          #+#    #+#             */
+/*   Updated: 2019/12/18 10:25:52 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_ntohex(unsigned long n)
 {
-	char	*s2;
-	size_t	len;
-	size_t	i;
+	long long	base;
+	size_t		len;
+	char		*hex;
+	size_t		i;
 
-	s2 = NULL;
-	len = 0;
-	while (s1 && s1[len])
+	base = 1;
+	len = 1;
+	hex = NULL;
+	while ((base = base * 16) && n / base > 0)
 		len++;
-	if ((s2 = (char *)ft_calloc((len + 1), sizeof(char))))
+	if ((hex = (char *)malloc((len + 1) * sizeof(char))))
 	{
 		i = 0;
-		while (s1 && s1[i] && i < len + 1)
+		while (i < len && (base = base / 16))
 		{
-			s2[i] = s1[i];
-			i++;
+			if (n / base < 10)
+				hex[i++] = '0' + (n / base);
+			else
+				hex[i++] = 'a' + (n / base) - 10;
+			n %= base;
 		}
+		hex[i] = 0;
 	}
-	return (s2);
+	return (hex);
 }
