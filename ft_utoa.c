@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 13:32:06 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/12/09 13:00:40 by rsoto-in         ###   ########.fr       */
+/*   Created: 2019/12/20 11:10:20 by rsoto-in          #+#    #+#             */
+/*   Updated: 2019/12/20 11:11:24 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_utoa(unsigned int n)
 {
-	size_t len;
+	int		i;
+	long	base;
+	int		len;
+	char	*nbr;
 
-	len = 0;
-	while (s && s[len])
+	base = 1;
+	len = 1;
+	nbr = NULL;
+	while ((base = base * 10) && n / base > 0)
 		len++;
-	return (len);
+	len = base < 0 ? len + 1 : len;
+	if ((nbr = (char *)malloc((len + 1) * sizeof(char))))
+	{
+		i = 0;
+		while (i < len && (base = base / 10))
+		{
+			nbr[i++] = '0' + (n / base);
+			n %= base;
+		}
+		nbr[i] = 0;
+	}
+	return (nbr);
 }

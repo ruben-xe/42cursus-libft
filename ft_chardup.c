@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_chardup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 13:32:06 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/12/09 13:00:40 by rsoto-in         ###   ########.fr       */
+/*   Created: 2019/12/21 13:08:42 by rsoto-in          #+#    #+#             */
+/*   Updated: 2019/12/21 13:11:12 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_chardup(const char c)
 {
-	size_t len;
+	char	*s;
 
-	len = 0;
-	while (s && s[len])
-		len++;
-	return (len);
+	if ((s = (char *)ft_calloc(2, sizeof(char))))
+		*s = c;
+	return (s);
 }

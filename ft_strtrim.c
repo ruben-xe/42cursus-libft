@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 16:19:15 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/20 16:17:58 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/12/09 13:01:18 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	int start;
 	int end;
 
-	i = ft_strsize(s1) - 1;
+	i = ft_strlen(s1);
 	end = 0;
 	while (s1 && i != end && (end = --i) > 0 && set)
 	{

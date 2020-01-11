@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ntoaddr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 12:36:58 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/12/21 22:38:38 by rsoto-in         ###   ########.fr       */
+/*   Created: 2019/12/21 13:17:50 by rsoto-in          #+#    #+#             */
+/*   Updated: 2019/12/21 13:19:59 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_ntoaddr(unsigned long n)
 {
-	char	*s2;
-	size_t	len;
-	size_t	i;
+	long long	base;
+	size_t		len;
+	char		*addr;
+	size_t		i;
 
-	s2 = NULL;
-	len = 0;
-	while (s1 && s1[len])
+	base = 1;
+	len = 1;
+	while ((base = base * 16) && n / base > 0)
 		len++;
-	if ((s2 = (char *)ft_calloc((len + 1), sizeof(char))))
+	if ((addr = (char *)malloc((2 + len + 1) * sizeof(char))))
 	{
-		i = 0;
-		while (s1 && s1[i] && i < len + 1)
+		addr[0] = '0';
+		addr[1] = 'x';
+		i = 2;
+		while (i < len + 2 && (base = base / 16))
 		{
-			s2[i] = s1[i];
-			i++;
+			if (n / base < 10)
+				addr[i++] = '0' + (n / base);
+			else
+				addr[i++] = 'a' + (n / base) - 10;
+			n %= base;
 		}
+		addr[i] = 0;
 	}
-	return (s2);
+	return (addr);
 }

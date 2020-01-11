@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsize.c                                       :+:      :+:    :+:   */
+/*   ft_ntohex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 13:41:03 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/19 17:10:58 by rsoto-in         ###   ########.fr       */
+/*   Created: 2019/12/11 15:24:38 by rsoto-in          #+#    #+#             */
+/*   Updated: 2019/12/18 10:25:52 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strsize(const char *s)
+char	*ft_ntohex(unsigned long n)
 {
-	size_t len;
+	long long	base;
+	size_t		len;
+	char		*hex;
+	size_t		i;
 
-	len = 0;
-	while (s && s[len])
+	base = 1;
+	len = 1;
+	hex = NULL;
+	while ((base = base * 16) && n / base > 0)
 		len++;
-	return (len + 1);
+	if ((hex = (char *)malloc((len + 1) * sizeof(char))))
+	{
+		i = 0;
+		while (i < len && (base = base / 16))
+		{
+			if (n / base < 10)
+				hex[i++] = '0' + (n / base);
+			else
+				hex[i++] = 'a' + (n / base) - 10;
+			n %= base;
+		}
+		hex[i] = 0;
+	}
+	return (hex);
 }

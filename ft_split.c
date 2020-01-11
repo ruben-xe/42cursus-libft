@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 18:46:39 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/20 16:17:53 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/12/09 13:01:00 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_setstrs(char **strs, char const *s, char c, int n)
 	int j;
 	int len;
 
-	i = ft_strsize(s) - 1;
+	i = ft_strlen(s);
 	while (--i > 0)
 	{
 		if (s[i] != c && (len = 1))
@@ -47,7 +47,7 @@ char	**ft_split(char const *s, char c)
 	int		n;
 	char	**strs;
 
-	i = ft_strsize(s) - 1;
+	i = ft_strlen(s);
 	n = 0;
 	strs = NULL;
 	while (--i > 0)

@@ -6,7 +6,7 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 19:57:00 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/19 17:09:19 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2019/12/22 14:17:00 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strdup(const char *s1);
+char				*ft_chardup(const char c);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
 size_t				ft_strnlen(const char *s, size_t maxlen);
-size_t				ft_strsize(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
 								size_t len);
@@ -55,6 +55,9 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
+char				*ft_utoa(unsigned int n);
+char				*ft_ntohex(unsigned long n);
+char				*ft_ntoaddr(unsigned long n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
