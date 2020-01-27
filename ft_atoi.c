@@ -6,19 +6,9 @@
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 21:14:12 by rsoto-in          #+#    #+#             */
-/*   Updated: 2019/11/20 10:18:04 by rsoto-in         ###   ########.fr       */
+/*   Updated: 2020/01/11 15:05:56 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-static int	ft_nbrlen(const char *str)
-{
-	int len;
-
-	len = 0;
-	while (str && str[len] >= '0' && str[len] <= '9')
-		len++;
-	return (len);
-}
 
 int			ft_atoi(const char *str)
 {
@@ -33,9 +23,9 @@ int			ft_atoi(const char *str)
 	while (str[i] && (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
 			|| str[i] == '\f' || str[i] == '\r' || str[i] == ' '))
 		i++;
-	if ((str[i] == '+' || str[i] == '-'))
+	if (str[i] == '+' || str[i] == '-')
 		base = str[i++] == '-' ? -base : base;
-	if (ft_nbrlen(&str[i]) > 0)
+	if (str[i] >= '0' && str[i] <= '9')
 	{
 		j = i - 1;
 		while (str[++i] >= '0' && str[i] <= '9')
