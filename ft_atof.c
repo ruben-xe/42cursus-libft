@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsoto-in <rsoto-in@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 12:25:28 by rsoto-in          #+#    #+#             */
-/*   Updated: 2020/01/28 13:55:07 by rsoto-in         ###   ########.fr       */
+/*   Created: 2020/01/28 19:12:17 by rsoto-in          #+#    #+#             */
+/*   Updated: 2020/01/28 19:54:53 by rsoto-in         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+float	ft_atof(const char *str)
 {
-	int i;
+	int		i;
+	char	*nbr;
+	float	n;
+	float	base;
 
-	i = -1;
-	while (s && s[++i] != c && s[i])
-		;
-	if (s && s[i] == c)
-		return ((char *)&s[i]);
-	return (NULL);
+	n = ft_atoi(str);
+	if ((nbr = ft_strchr(str, '.')))
+	{
+		i = 0;
+		while (nbr && nbr[i] && nbr[i] == '.')
+			i++;
+		base = 10;
+		while (nbr[i] >= '0' && nbr[i] <= '9')
+		{
+			if (nbr[i] - '0')
+				n += 1.0 / (base / (nbr[i] - '0'));
+			base *= 10;
+			i++;
+		}
+	}
+	return (n);
 }
