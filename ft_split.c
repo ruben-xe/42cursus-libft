@@ -31,9 +31,7 @@ void	ft_setstrs(char **strs, char const *s, char c, int n)
 				while (++j < len)
 					strs[n][j] = s[i + j];
 				strs[n][j] = 0;
-			}
-			else
-			{
+			} else {
 				free(strs);
 				strs = NULL;
 			}
@@ -43,16 +41,17 @@ void	ft_setstrs(char **strs, char const *s, char c, int n)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		n;
-	char	**strs;
+	int i;
+	int n;
+	char **strs;
 
 	i = ft_strlen(s);
 	n = 0;
 	strs = NULL;
-	while (--i > 0)
+	while (--i > 0) {
 		if (s[i] != c && s[i - 1] == c)
-			n++;
+		  n++;
+	}
 	if (i >= 0 && s[i] != c)
 		n++;
 	if ((strs = (char **)malloc((n + 1) * sizeof(char *))))
